@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: linear-gradient(rgb(255,21,21),rgb(30,25,60));
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    height: 150px;
+    background-color: #000;
+    overflow: auto;
+}
+
+.menu{
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    line-height: 150px;
+}
+
+.menu__list{
+    padding: 0 0.5rem;
+}
+
+.logo{
+    width: 125px;
+    display: block;
+}
+
+.menu__link{
+    text-decoration: none;
+    padding: 0.5em 0.5em;
+    color: #000;
+    background-color: rgb(255,21,21);
+    border-radius: 15px;
+}
+
+.to-left{
+    margin-right: auto;
+}
+
+.main{
+    min-height: 1fr;
+}
+
+.aside{
+    padding: 0 1rem;
+    border: 1px solid #000;
+    margin-bottom: 1rem;
+}
+
+.aside-left{
+    background: linear-gradient(rgba(108,21,103,255),rgba(19,70,176,255));
+
+}
+
+.aside-right{
+    background: linear-gradient(rgba(144,131,185,255),rgba(22,98,99,255));
+}
+
+.gallery{
+    columns: 4 250px;
+    column-gap: 0.5em;
+}
+
+.imagen-poster{
+    max-width: 100%;
+    margin-bottom: 0.5em;
+    filter: grayscale(1);
+    transition: 0.3s;
+}
+
+.imagen-poster:hover{
+    filter: grayscale(0);
+}
+
+.footer{
+    height: 100px;
+    background: linear-gradient(rgba(168,104,39,255), rgba(20,66,105,255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #000;
+}
+
+
+
+/*Vista en PC*/
+
+@media screen and (min-width: 800px) {
+    .container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    } 
+
+    .header,
+    .footer {
+        width: 100%;
+        
+    }
+
+    .header{
+    margin-bottom: 1rem;
+    }
+
+    .main{
+        flex: 2;
+        order: 2;
+        min-height: 80vh;
+    }
+
+    .aside{
+        margin: 0 1rem;
+    }
+
+    .aside-left {
+        order: 1;
+        flex: 1;
+    }
+
+    .aside-right{
+        flex: 1;
+        order: 3;
+    }
+
+    footer{
+        order: 4;
+        margin-top: 1rem;
+    }
+}
